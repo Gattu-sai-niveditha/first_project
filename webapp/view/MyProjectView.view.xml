@@ -1,0 +1,62 @@
+<mvc:View
+    controllerName="ui.MyProjectTwo.secondproject.controller.MyProjectView"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+        <App id="app">
+            <Page id="page" title="{i18n>title}">
+                <SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master">
+		            <detailPages>
+			            <Page id="detail" title="Detail 1" backgroundDesign= "Solid">
+				            <Label id="_IDGenLabel1" text="Detail page 1" />
+				            <Button id="_IDGenButton1" text="Go to Detail page2" press=".onPressNavToDetail" />
+			            </Page>
+			            <Page id="detailDetail" title="Detail Detail" backgroundDesign= "Solid" showNavButton="true" navButtonPress=".onPressDetailBack">
+				<VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+					<Label id="_IDGenLabel2" text="This is Detail Page2" />
+					<Text id="_IDGenText1" text="Here you could change the Split Application mode.
+                     After the mode change, resize the browser window to see the difference in the master form behaviour." />
+					<RadioButtonGroup id="_IDGenRadioButtonGroup1" columns="1" width="500px" class="sapUiMediumMarginBottom" select=".onPressModeBtn">
+						<RadioButton id="RB1-1" text="show/hide" selected="true"  />
+						<RadioButton id="RB1-2" text="stretch/compress"  />
+						<RadioButton id="RB1-3" text="hide"  />
+						<RadioButton id="RB1-4" text="popover"  />
+					</RadioButtonGroup>
+				</VBox>
+			</Page>
+			<Page id="detail2" title="Detail 3 Page" backgroundDesign= "Solid" showNavButton="true" navButtonPress=".onPressDetailBack">
+				<Label id="_IDGenLabel3" text="This is Detail Page3" />
+				<Input id="_IDGenInput1"/>
+				<Label id="_IDGenLabel4" text="Label 2" />
+				<Input id="_IDGenInput2"/>
+				<Label id="_IDGenLabel5" text="Label 3" />
+				<Input id="_IDGenInput3"/>
+				<Label id="_IDGenLabel6" text="Label 4" />
+				<Input id="_IDGenInput4"/>
+				<Label id="_IDGenLabel7" text="Label 5" />
+				<Input id="_IDGenInput5"/>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page id="master" title="Master 1" backgroundDesign= "List">
+				<List id="_IDGenList1">
+					<StandardListItem id="_IDGenStandardListItem1" title="To Master2" type="Navigation" press=".onPressGoToMaster" />
+				</List>
+			</Page>
+			<Page id="master2" title="Master 2" backgroundDesign="List" showNavButton="true" navButtonPress=".onPressMasterBack">
+				<List id="_IDGenList2" itemPress=".onListItemPress">
+					<items>
+						<StandardListItem id="_IDGenStandardListItem2" title="To Detail 1" type="Active"  />
+						<StandardListItem id="_IDGenStandardListItem3" title="To Detail 2" type="Active"  />
+						<StandardListItem id="_IDGenStandardListItem4" title="To Detail 3" type="Active" />
+					</items>
+				</List>
+			</Page>
+		</masterPages>
+	</SplitApp>
+                </Page>
+        
+        </App>
+    
+</mvc:View>
